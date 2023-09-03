@@ -38,3 +38,73 @@ obj1=it_team()
 obj1.__fun__()
 obj1.__output__()
 
+
+# Function Overriding  :-
+class Ecpl2:
+    def __init__(self): #Constructor Overriding
+        print("This is the constructor: ", 10+20 )
+
+    def __fun__(self, a, b): #Function Overriding
+        print("Sum of 2 numbers: ", a+b)
+
+class It_Class2(Ecpl2):
+    def __init__(self):
+        print("This is function overriding :", 100+200)
+
+    def __fun__(self, a, b,c):
+        print("Sum of 3 numbers :", a+b+c)
+
+obj2=It_Class2()
+obj2.__fun__(10,20, 30)
+
+
+
+# Multi-Level Inheritance
+class Grand_Grandfather:
+    name1="Madanmohan"
+    def __fun1__(self):
+        print("My Grand Father name is : ", self.name1)
+
+class GrandFather(Grand_Grandfather):
+    name2="Joyanta Kumar"
+    def __fun2__(self):
+        print("My Grand Father name is :", self.name2)
+
+class Father(GrandFather):
+    name3="Gorachand"
+    def __fun3__(self):
+        print("My Father name is : ", self.name3)
+
+
+obj3=Father()
+obj3.__fun1__()
+obj3.__fun2__()
+obj3.__fun3__()
+
+
+print("************************************************")
+
+# Multiple Inheritance
+class Grand_Grandfather2:
+    name1="Madanmohan"
+    def __fun1__(self):
+        print("My Grand Father name is : ", self.name1)
+
+class GrandFather2():
+    name2="Joyanta Kumar"
+    def __fun2__(self):
+        print("My Grand Father name is :", self.name2)
+
+class Father2(Grand_Grandfather2, GrandFather2):
+    name3="Gorachand"
+    def __fun3__(self):
+        print("My Father name is : ", self.name3)
+
+
+obj4=Father2()
+obj4.__fun1__()
+obj4.__fun2__()
+obj4.__fun3__()
+
+print("Father2 is sub-class of GrandFather2 :", issubclass(Father2, GrandFather2))
+print("obj4 is a instance of Father2 class :", isinstance(obj4, Father2))
