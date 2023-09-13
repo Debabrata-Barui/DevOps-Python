@@ -14,4 +14,13 @@ Exception Handling :-
 
 '''
 
+x=10
+try:
+    print("The value of the X is : ", x)
+except:
+    print("The X variable is not defined")
+else:
+    print("X is defined")
+finally:
+    print("Finally block is run allways")
 
